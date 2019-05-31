@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "81565364333",
+    "firebase_url": "https://emotion-detection-ml.firebaseio.com",
+    "project_id": "emotion-detection-ml",
+    "storage_bucket": "emotion-detection-ml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81565364333:android:90136eec42cf853b",
+        "android_client_info": {
+          "package_name": "fci.machinelearning.emotiondetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81565364333-3ddpkgars7q2cb4bgphsh636v4immtkb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fci.machinelearning.emotiondetection",
+            "certificate_hash": "f2d8fa316629e1630586f13d425073bfdcde324d"
+          }
+        },
+        {
+          "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhoSgSWbeZSQkVtHnOnjp0nefwILbmwtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81565364333:android:358dcfa6c477ebf4",
+        "android_client_info": {
+          "package_name": "fci.machinelearning.emotiondetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81565364333-sq8l3aqtgvgue32t8ks77e231nah3prb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fci.machinelearning.emotiondetector",
+            "certificate_hash": "f2d8fa316629e1630586f13d425073bfdcde324d"
+          }
+        },
+        {
+          "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhoSgSWbeZSQkVtHnOnjp0nefwILbmwtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81565364333:android:03a19b80dcfba23a",
+        "android_client_info": {
+          "package_name": "husaynhakeem.io.facedetectorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81565364333-5tm8nq7vldbrejv4hj0io8caj28ko64q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "husaynhakeem.io.facedetectorapp",
+            "certificate_hash": "f2d8fa316629e1630586f13d425073bfdcde324d"
+          }
+        },
+        {
+          "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhoSgSWbeZSQkVtHnOnjp0nefwILbmwtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81565364333-e5dcjh0rslmp1tr6hfpu17q1823jo666.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

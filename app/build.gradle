@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -46,6 +48,20 @@ dependencies {
     String archVersion = '1.1.1'
     implementation "android.arch.lifecycle:extensions:$archVersion"
     implementation "android.arch.lifecycle:viewmodel:$archVersion"
+
+
+    // Camera
+    implementation 'com.otaliastudios:cameraview:1.5.1'
+
+
+    // Firebase ML Kit
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
+    implementation('com.google.firebase:firebase-core:16.0.4') {
+        exclude group: 'com.android.support'
+    }
+    implementation('com.google.firebase:firebase-ml-vision:18.0.1') {
+        exclude group: 'com.android.support'
+    }
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
