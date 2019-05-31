@@ -6,7 +6,7 @@ import fci.machinelearning.emotiondetector.business.model.convertToFacing
 import fci.machinelearning.emotiondetector.business.model.convertToOrientation
 
 
-internal class FaceBoundsOverlayHandler {
+class FaceBoundsOverlayHandler {
 
     private var previousMin: Float = -1f
     private var previousMax: Float = -1f

@@ -8,8 +8,6 @@ import fci.machinelearning.emotiondetector.viewmodel.fragment.CapturedImageViewM
 class CapturedImageFragment :
         BaseFullScreenDialogFragmentWithSharedViewModel<CapturedImageViewModel, CameraViewModel>() {
 
-
-
     override fun getViewModelInstance() = CapturedImageViewModel.getInstance(this)
 
     override fun getSharedViewModelInstance() = activity?.run activity@ {

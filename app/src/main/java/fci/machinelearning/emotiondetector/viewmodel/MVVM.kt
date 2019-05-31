@@ -5,6 +5,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import fci.machinelearning.emotiondetector.R
 import io.reactivex.disposables.CompositeDisposable
 
 /**
@@ -17,11 +18,11 @@ open class BaseViewModel : ViewModel() {
     val error = MutableLiveData<Error>()
 
     protected fun notify(event: Event) {
-        this.event.value = event
+        this.event.postValue(event)
     }
 
     protected fun notify(error: Error) {
-        this.error.value = error
+        this.error.postValue(error)
     }
 }
 
@@ -41,9 +42,14 @@ interface ISharedViewModel
 
 open class BaseSharedRxViewModel : BaseRxViewModel()
 
-enum class Event(@StringRes val messageRes: Int)
+enum class Event(@StringRes val messageRes: Int) {
+    EMOTION_PROCESSING_STARTED(0),
+    EMOTION_PROCESSING_FINISHED(0),
+}
 
-enum class Error(@StringRes val messageRes: Int)
+enum class Error(@StringRes val messageRes: Int) {
+    FIREBASE_ERROR(R.string.error_detecting_faces)
+}
 
 interface BaseViewModelOwner<out VM : BaseViewModel> {
 

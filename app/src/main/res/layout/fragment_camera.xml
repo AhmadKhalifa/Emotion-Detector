@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".ui.activity.CameraActivity">
 
-</LinearLayout>
+    <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"/>
+
+    <fci.machinelearning.emotiondetector.ui.widget.FaceBoundsOverlay
+            android:id="@+id/facesBoundsOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <fci.machinelearning.emotiondetector.ui.widget.FaceBoundsOverlay
+            android:id="@+id/facesEmotionsOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/cameraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp"
+            android:src="@drawable/laughing"/>
+
+
+    <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/progressLayout"
+            android:background="@color/darkTransparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ProgressBar
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+</FrameLayout>

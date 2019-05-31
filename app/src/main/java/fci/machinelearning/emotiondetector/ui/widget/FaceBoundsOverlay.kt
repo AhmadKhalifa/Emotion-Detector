@@ -1,4 +1,4 @@
-package fci.machinelearning.emotiondetector.business.faceBounds
+package fci.machinelearning.emotiondetector.ui.widget
 
 import android.content.Context
 import android.util.AttributeSet
@@ -12,7 +12,7 @@ import fci.machinelearning.emotiondetector.business.model.Orientation
 
 
 /**
- * A view that renders the results of a face detection process. It contains a list of faces
+ * A view that renders the results of a face detection detectFaces. It contains a list of faces
  * bounds which it draws using a set of attributes provided by the camera: Its width, height,
  * orientation and facing. These attributes impact how the face bounds are drawn, especially
  * the scaling factor between this view and the camera view, and the mirroring of coordinates.
@@ -23,6 +23,8 @@ class FaceBoundsOverlay @JvmOverloads constructor(
         defStyleAttr: Int = 0) : View(ctx, attrs, defStyleAttr) {
 
     val facesBounds: MutableList<FaceBounds> = mutableListOf()
+
+    var isEmotionsOverlay = false
 
     private val anchorPaint = Paint()
     private val idPaint = Paint()
@@ -58,10 +60,11 @@ class FaceBoundsOverlay @JvmOverloads constructor(
         facesBounds.forEach {
             val centerX = computeFaceBoundsCenterX(canvas.width.toFloat(), scaleX(it.box.exactCenterX(), canvas))
             val centerY = computeFaceBoundsCenterY(canvas.height.toFloat(), scaleY(it.box.exactCenterY(), canvas))
-            drawEmoji(canvas, it.emotion, centerX, centerY, it.box.right - it.box.left)
-//            drawAnchor(canvas, centerX, centerY)
-//            drawId(canvas, it.id.toString(), it.emotion, centerX, centerY)
-//            drawBounds(it.box, canvas, centerX, centerY)
+            if (isEmotionsOverlay) {
+                drawEmoji(canvas, it.emotion, centerX, centerY, it.box.right - it.box.left)
+            } else {
+                drawBounds(it.box, canvas, centerX, centerY)
+            }
         }
     }
 
@@ -114,7 +117,7 @@ class FaceBoundsOverlay @JvmOverloads constructor(
         canvas.drawCircle(
                 centerX,
                 centerY,
-                ANCHOR_RADIUS,
+            ANCHOR_RADIUS,
                 anchorPaint)
     }
 

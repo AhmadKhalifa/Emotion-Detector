@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Emotion Detector</string>
+    <string name="error_detecting_faces">Error detecting faces</string>
 </resources>
