@@ -48,6 +48,8 @@ enum class Event(@StringRes val messageRes: Int) {
 }
 
 enum class Error(@StringRes val messageRes: Int) {
+    GENERAL_ERROR(R.string.general_error),
+    INTERNET_CONNECTION_ERROR(R.string.error_connecting_to_internet),
     FIREBASE_ERROR(R.string.error_detecting_faces)
 }
 

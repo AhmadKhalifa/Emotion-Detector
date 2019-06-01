@@ -1,10 +1,17 @@
 package fci.machinelearning.emotiondetector.util
 
+import fci.machinelearning.emotiondetector.EmotionDetectorApplication
+
 /**
  * @author Ahmad Khalifa
  */
 
-interface BaseConnectionChecker {
+abstract class BaseConnectionChecker {
 
-    fun isNetworkAvailable(): Boolean
+    companion object {
+
+        fun getDefault() = InternetConnectionChecker(EmotionDetectorApplication.instance)
+    }
+
+    abstract fun isNetworkAvailable(): Boolean
 }

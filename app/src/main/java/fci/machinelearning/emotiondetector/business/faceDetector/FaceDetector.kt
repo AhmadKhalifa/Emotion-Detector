@@ -1,5 +1,6 @@
 package fci.machinelearning.emotiondetector.business.faceDetector
 
+import android.graphics.Bitmap
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import com.google.firebase.ml.vision.face.FirebaseVisionFace
@@ -17,7 +18,9 @@ open class FaceDetector(private val faceBoundsOverlay: FaceBoundsOverlay) {
         private const val RIGHT_ANGLE = 90
     }
 
-    fun detectFaces(frame: Frame, onSuccess: (List<FaceBounds>) -> Unit, onError: (Throwable) -> Unit = {}) {
+    fun detectFaces(frame: Frame,
+                    onSuccess: (image: Bitmap, List<FaceBounds>) -> Unit,
+                    onError: (Throwable) -> Unit = {}) {
         updateOverlayAttributes(frame)
         detectFacesIn(frame, onSuccess, onError)
     }
@@ -37,13 +40,14 @@ open class FaceDetector(private val faceBoundsOverlay: FaceBoundsOverlay) {
     }
 
     protected open fun detectFacesIn(frame: Frame,
-                                     onSuccess: (List<FaceBounds>) -> Unit = {},
+                                     onSuccess: (image: Bitmap, List<FaceBounds>) -> Unit,
                                      onError: (Throwable) -> Unit = {}) {
+        val image = convertFrameToImage(frame)
         frame.data?.let {
             firebaseFaceDetectorWrapper.process(
-                convertFrameToImage(frame),
+                image = image,
                 onSuccess = { firebaseVisionFaces ->
-                    onSuccess(convertToListOfFaceBounds(firebaseVisionFaces))
+                    onSuccess(image.bitmapForDebugging, convertToListOfFaceBounds(firebaseVisionFaces))
                 },
                 onError = onError
             )
